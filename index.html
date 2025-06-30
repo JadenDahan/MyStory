@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Chat Me | Jaden Dahan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-texture"></div>
+  <header>
+    <div class="cozy-header">
+      <!-- Large coffee cup with animated steam -->
+      <div class="cozy-cup-books">
+        <div class="coffee-cup-outer">
+          <svg class="coffee-cup-svg" viewBox="0 0 120 150" width="110" height="130" aria-hidden="true">
+            <!-- Shadow -->
+            <ellipse cx="60" cy="134" rx="28" ry="10" fill="#1b140b" opacity="0.13"/>
+            <!-- Cup Bowl (taller and more vertical sides) -->
+            <ellipse cx="60" cy="52" rx="28" ry="12" fill="#e8e0da" stroke="#998c76" stroke-width="2"/>
+            <!-- Cup Body: Tall sides, vertical -->
+            <rect x="32" y="52" width="56" height="68" rx="22" fill="#e8e0da" stroke="#998c76" stroke-width="2"/>
+            <!-- Coffee Surface -->
+            <ellipse cx="60" cy="58" rx="22" ry="8" fill="#4a3623"/>
+            <!-- Cup Rim Highlight -->
+            <ellipse cx="60" cy="58" rx="26" ry="10" fill="none" stroke="#f3eee8" stroke-width="1.3"/>
+<path 
+  d="M75 80 C 90 70, 150 120, 90 100" 
+  stroke="#e8e0da" stroke-width="8" fill="none"/>
+<path 
+  d="M70 70 C 90 70, 150 120, 90 100" 
+  stroke="#998c76" stroke-width="2.5" fill="none"/>
+            <!-- Animated Steam -->
+            <g class="steam">
+              <path class="steam1" d="M54 44 Q54 24 66 23 Q81 24 78 11" stroke="#fff" stroke-width="2.3" fill="none" opacity="0.7"/>
+              <path class="steam2" d="M67 44 Q69 26 58 22 Q47 19 62 7" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.5"/>
+            </g>
+          </svg>
+        </div>
+        <!-- Books leaning against the cup -->
+        <nav class="cozy-bookshelf">
+          <a class="book book-tan"     data-target="about"><span>About Me</span></a>
+          <a class="book book-blue"    data-target="projects"><span>Projects</span></a>
+          <a class="book book-light"   data-target="courses"><span>Courses</span></a>
+          <a class="book book-purple"  data-target="experience"><span>Experience</span></a>
+          <a class="book book-green"   data-target="skills"><span>Skills</span></a>
+          <a class="book book-leather" data-target="contact"><span>Contact</span></a>
+        </nav>
+      </div>
+      <div class="cozy-titles">
+        <h1 class="coffeechat-title">Coffee Chat Me</h1>
+        <p class="subtitle">by Jaden Dahan</p>
+        <p class="tagline">A cozy, moody corner for code, books, and coffee &ndash; flip a book to read my story.</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="about" class="flip-page hidden"><h2>About Me</h2><p>Hey, I’m Jaden! I love deep conversations, books, and the feeling of a quiet library or coffee shop...</p></section>
+    <section id="projects" class="flip-page hidden"><h2>Projects</h2><ul><li><strong>Stock Predictor</strong> – ML-powered app for forecasting stock prices.</li><li><strong>Fun with Fractals</strong> – Interactive fractal visualizer.</li></ul></section>
+    <section id="courses" class="flip-page hidden"><h2>Courses</h2><ul><li>Statistical Learning (Stanford/Coursera)</li><li>Stochastic Processes (University)</li></ul></section>
+    <section id="experience" class="flip-page hidden"><h2>Experience</h2><ul><li><strong>Quant Intern</strong> at Big Finance Co. – Built trading models and analyzed financial data.</li></ul></section>
+    <section id="skills" class="flip-page hidden"><h2>Skills</h2><ul class="skills-list"><li>Python</li><li>R</li><li>C++</li><li>Matlab</li><li>Data Viz</li></ul></section>
+    <section id="contact" class="flip-page hidden"><h2>Contact</h2><form autocomplete="off"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><textarea placeholder="Say hi!" required></textarea><button type="submit">Send</button></form><p><a href="mailto:your.email@example.com">your.email@example.com</a> | <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | <a href="https://github.com/JadenDahan" target="_blank">GitHub</a></p></section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <span>☕</span>
+      <span>© 2025 Jaden Dahan</span>
+      <span>📚</span>
+    </div>
+  </footer>
+  <script>
+    // Navigation for book links
+    document.querySelectorAll('.book').forEach(book => {
+      book.addEventListener('click', () => {
+        const targetId = book.dataset.target;
+        document.querySelectorAll('.flip-page').forEach(p => {
+          p.classList.remove('visible');
+          p.classList.add('hidden');
+        });
+        const targetPage = document.getElementById(targetId);
+        targetPage.classList.remove('hidden');
+        setTimeout(() => targetPage.classList.add('visible'), 20);
+      });
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('about').classList.remove('hidden');
+      setTimeout(() => document.getElementById('about').classList.add('visible'), 20);
+    });
+  </script>
+</body>
+</html>
