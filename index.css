@@ -1,0 +1,288 @@
+:root {
+  --bg: #26272b;
+  --text: #eae6db;
+  --subtitle: #b8b0a7;
+  --accent: #bfa37a;
+  --shadow: 0 8px 32px #18181f60;
+  --book-shelf: #2d2217;
+  --book-edge: #322b20;
+  --book-aged: #c9b89b;
+  --book-blue: #3e5a74;
+  --book-light: #aabfc9;
+  --book-purple: #574c63;
+  --book-green: #4b6452;
+  --book-leather: #60463b;
+}
+
+body {
+  background: radial-gradient(ellipse 90% 60% at 50% 20%, #34343b 30%, #232429 100%);
+  color: var(--text);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  margin: 0; padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.bg-texture {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 0;
+  background: url('https://www.transparenttextures.com/patterns/groovepaper.png'), var(--bg);
+  opacity: 0.13;
+}
+header {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+.cozy-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4em;
+}
+.coffeechat-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.25em;
+  font-weight: bold;
+  color: #e8e3d3;
+  letter-spacing: 1.6px;
+  margin: 0 0 0.13em 0;
+  text-shadow: 0 1px 0 #191919, 0 2px 12px #0009;
+  filter: brightness(1.1) contrast(1.15);
+}
+.subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 1.12em;
+  color: var(--subtitle);
+  margin: 0 0 0.15em 0;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  text-shadow: 0 1px 2px #18181f44;
+}
+.tagline {
+  font-size: 1.03em;
+  color: #92877b;
+  margin: 0;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px #18181f33;
+}
+.cup-and-title {
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+}
+.coffee-cup-outer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 105px;
+  margin-right: 0.7em;
+  margin-left: 0.5em;
+}
+.coffee-cup-svg {
+  display: block;
+  margin: 0;
+  filter: drop-shadow(0 2px 10px #0007);
+  background: none;
+}
+.steam .steam1 {
+  animation: steamWobble 2.7s infinite linear alternate;
+  transform-origin: center;
+}
+.steam .steam2 {
+  animation: steamWobble2 3.5s infinite linear alternate;
+  transform-origin: center;
+}
+@keyframes steamWobble {
+  0% { opacity: 0.3; transform: translateY(0) scaleX(1);}
+  50% { opacity: 0.9; transform: translateY(-14px) scaleX(1.09);}
+  100% { opacity: 0.09; transform: translateY(-28px) scaleX(0.92);}
+}
+@keyframes steamWobble2 {
+  0% { opacity: 0.2; transform: translateY(0) scaleX(1);}
+  60% { opacity: 0.7; transform: translateY(-17px) scaleX(1.13);}
+  100% { opacity: 0.04; transform: translateY(-34px) scaleX(0.94);}
+}
+.cozy-titles {
+  margin-top: 1.5em;
+  text-align: center;
+}
+/* Bookcase nav */
+.cozy-cup-books {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.7em;
+  margin-bottom: 0.5em;
+}
+.cozy-bookshelf {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.23em;
+  position: relative;
+  margin-left: -60px; /* books overlap cup slightly */
+  margin-bottom: 9px;
+}
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 36px;
+  height: 116px;
+  margin: 0 2.5px;
+  box-shadow: 2px 4px 14px #0005, inset 0 -2px 12px #0003;
+  cursor: pointer;
+  border-radius: 4px 6px 8px 4px/6px 8px 12px 6px;
+  border-left: 2.5px solid #887c61;
+  border-right: 2.5px solid #322b20;
+  border-bottom: 5px solid var(--book-shelf);
+  border-top: 2px solid #c7bea7;
+  z-index: 1;
+  position: relative;
+  transform: rotate(var(--deg, 0deg));
+  box-sizing: border-box;
+  background-blend-mode: overlay;
+  background-size: cover;
+  transition: transform 0.18s cubic-bezier(.34,1.56,.64,1), box-shadow 0.18s cubic-bezier(.34,1.56,.64,1);
+}
+.book span {
+  font-size: 0.91em;
+  font-family: 'Georgia', serif;
+  color: #f5f2ee;
+  text-shadow: 0 0 3px #2f2210, 0 1px 0 #ede2cc;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.05em;
+  margin-bottom: 7px;
+  user-select: none;
+  pointer-events: none;
+  text-align: center;
+}
+.book:hover {
+  transform: scale(1.09) rotate(-3deg) translateY(-7px);
+  box-shadow: 0 10px 32px #000b, 0 2px 18px #29292f88;
+  z-index: 3;
+}
+/* Vintage, moody book colors/textures */
+.book-tan {
+  background: repeating-linear-gradient(
+    90deg,#cfc1a1 0 10%, #b8a484 10% 27%, #a69368 27% 90%, #ede2cc 90% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book-blue {
+  background: repeating-linear-gradient(
+    90deg, #283848 0 10%, #3e5a74 10% 70%, #222f3b 70% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book-light {
+  background: repeating-linear-gradient(
+    90deg, #aabfc9 0 22%, #c7dbe4 22% 77%, #839ba8 77% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book-purple {
+  background: repeating-linear-gradient(
+    90deg, #574c63 0 22%, #7d6fa1 22% 77%, #3e2b56 77% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book-green {
+  background: repeating-linear-gradient(
+    90deg, #212c21 0 12%, #4b6452 12% 84%, #b3c3b1 84% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book-leather {
+  background: repeating-linear-gradient(
+    90deg,#49372a 0 30%, #60463b 30% 77%, #7d6d54 77% 100%
+  ), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+.book:nth-child(1) { --deg: -7deg;}
+.book:nth-child(2) { --deg: -3deg;}
+.book:nth-child(3) { --deg: 0deg;}
+.book:nth-child(4) { --deg: 4deg;}
+.book:nth-child(5) { --deg: 9deg;}
+.book:nth-child(6) { --deg: 13deg;}
+.book-shelf {
+  position: absolute;
+  left: -14px;
+  right: -16px;
+  bottom: -14px;
+  height: 18px;
+  background: linear-gradient(180deg, var(--book-shelf) 85%, #473c2b 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 16px #0008;
+  z-index: 0;
+  width: calc(100% + 28px);
+}
+.flip-page {
+  background: #282828;
+  color: #f2e8d5;
+  max-width: 700px;
+  margin: 1em auto;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 8px 20px #0003;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  transition: transform 0.6s cubic-bezier(.43,1.31,.64,1), opacity 0.45s cubic-bezier(.43,1.31,.64,1);
+  opacity: 0;
+  font-family: 'Georgia', serif;
+}
+.flip-page.visible {
+  transform: rotateY(0deg);
+  opacity: 1;
+  z-index: 10;
+}
+.hidden {
+  display: none;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+  list-style: none;
+  padding: 0;
+}
+footer {
+  background: linear-gradient(90deg, #232429 60%, #36353a 100%);
+  color: #c3bdb6;
+  text-align: center;
+  padding: 1.1em 0;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  box-shadow: 0 -2px 12px #23242912;
+  margin-top: 4em;
+  font-family: 'Georgia', serif;
+}
+.footer-inner {
+  display: flex;
+  gap: 1.1em;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.07em;
+}
+@media (max-width: 1100px) {
+  .cozy-header, .cup-and-title, .cozy-cup-books, .cozy-bookshelf {
+    flex-direction: column !important;
+    align-items: center !important;
+    max-width: 94vw;
+  }
+  .cozy-cup-books, .cozy-bookshelf {
+    flex-direction: row !important;
+    width: 100vw;
+    max-width: 99vw;
+    gap: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .coffee-cup-svg { width: 70px; height: 70px; }
+}
+@media (max-width: 700px) {
+  .cozy-bookshelf { gap: 0.1em; margin-left: 0;}
+  .book { width: 22px; height: 74px; font-size: 0.55em; min-width: 13px;}
+  .coffeechat-title { font-size: 1.1em;}
+  .cup-and-title { gap: 0.5em;}
+  .flip-page { padding: 1.1em 0.6em;}
+}
