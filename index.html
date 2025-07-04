@@ -130,7 +130,7 @@
     gap: 0.23em;
     position: relative;
     margin-left: 9 px; /* books overlap cup slightly */
-    margin-bottom: 2 px;
+    margin-bottom: 0 px;
   }
   .book {
     display: flex;
@@ -138,7 +138,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 50px;
-    height: 150px;
+    height: 170px;
     margin: 0 4px;
     box-shadow: 2px 4px 14px #0005, inset 0 -2px 12px #0003;
     cursor: pointer;
@@ -357,7 +357,30 @@ As Bill Gates said, “We all need people who will give us feedback. That’s ho
 Let’s connect.</p>
     <img src="JADEN-42.jpg" alt="Profile Picture" style="width:200px; border-radius: 10px;">
     </section>
-    <section id="projects" class="flip-page hidden"><h2>Projects</h2><ul><li><strong>Stock Predictor</strong> – ML-powered app for forecasting stock prices.</li><li><strong>Fun with Fractals</strong> – Interactive fractal visualizer.</li></ul></section>
+    <section id="projects" class="flip-page hidden">
+      <h2>Projects</h2>
+        <div class="container">
+    <div class="project">
+      <h2>Wealth Management Analytics Website – Brooks Financial Group</h2>
+      <div class="tools">Tools Used: HTML/CSS, JavaScript, GitHub Pages, Financial Modeling, Excel</div>
+      <p>
+        Developed a custom web platform for <strong>Brooks Financial Group</strong> to visualize and communicate the firm’s portfolio strategy and performance analytics. 
+        Built interactive modules that explain <strong>Sharpe Ratio</strong> optimization, <strong>Core-Satellite Allocation</strong>, and <strong>Tactical vs. Strategic Asset Allocation</strong> through data-driven calculators and visual tools.
+        Deployed the site using GitHub Pages for streamlined accessibility and version control.
+      </p>
+    </div>
+
+    <div class="project">
+      <h2>Autonomous Irrigation & Aeration System – Smart Garden Engineering</h2>
+      <div class="tools">Tools Used: Arduino (C++), CAD (SolidWorks), Sensors, Solenoid Valves, 3D Printing</div>
+      <p>
+        Designed and implemented a self-regulating irrigation system for a raised-bed garden, integrating a custom water basin with sensor-driven aeration and overflow control.
+        Programmed an Arduino unit to manage real-time soil moisture and water levels via <strong>12V solenoid valves</strong>, optimizing water efficiency using environmental feedback.
+        Engineered all physical and digital components from scratch, leveraging CAD and systems integration principles to ensure functionality and sustainability.
+      </p>
+    </div>
+  </div>
+    </section>
     <section id="courses" class="flip-page hidden"><h2>Courses</h2><ul><li>Statistical Learning (Stanford/Coursera)</li><li>Stochastic Processes (University)</li></ul></section>
     <section id="experience" class="flip-page hidden"><h2>Experience</h2><ul><li><strong>Quant Intern</strong> at Big Finance Co. – Built trading models and analyzed financial data.</li></ul></section>
     <section id="skills" class="flip-page hidden"><h2>Skills</h2><ul class="skills-list"><li>Python</li><li>R</li><li>C++</li><li>Matlab</li><li>Data Viz</li></ul></section>
